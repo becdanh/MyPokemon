@@ -10,7 +10,12 @@ namespace MyPokemon.Application.Common
     {
         public T Result { get; set; }
         public bool Success { get; set; }
-        public string Error { get; set; }
+        public ApiError Error { get; set; }
+    }
+    public class ApiError
+    {
+        public int Code { get; set; }
+        public string Message { get; set; }
     }
 
     public class PagedResult<T>
