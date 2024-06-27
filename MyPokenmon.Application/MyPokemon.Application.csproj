@@ -16,4 +16,8 @@
     <ProjectReference Include="..\MyPokemon.Infrastructure\MyPokemon.Infrastructure.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Ptypes\Commands\" />
+  </ItemGroup>
+
 </Project>

@@ -32,7 +32,11 @@ namespace MyPokemon.Application.Pokemons.Handlers
                 return new ApiResponse<ItemResult<PokemonDto>>
                 {
                     Success = false,
-                    Error = "Pokemon not found"
+                    Error = new ApiError
+                    {
+                        Code = 0,
+                        Message = "Pokemon not found"
+                    }
                 };
             }
 

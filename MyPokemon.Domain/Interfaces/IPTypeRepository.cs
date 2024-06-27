@@ -10,5 +10,6 @@ namespace MyPokemon.Domain.Interfaces
     public interface IPTypeRepository
     {
         Task<PType> GetByIdAsync(int id);
+        Task<(IEnumerable<Pokemon>, int)> GetPokemonsByTypeAsync(int id, int pageNumber, int pageSize);
     }
 }
