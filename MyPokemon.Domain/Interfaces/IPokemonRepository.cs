@@ -11,8 +11,11 @@ namespace MyPokemon.Domain.Interfaces
     {
         Task AddAsync(Pokemon pokemon);
         Task<Pokemon> GetByIdAsync(int id);
-        IQueryable<Pokemon> GetAll();
+        Task<IEnumerable<Pokemon>> GetAllAsync(int pageNumber, int pageSize, string search);
+        Task<int> GetTotalCountAsync(string search);
         Task UpdateAsync(Pokemon pokemon);
         Task SoftDeleteAsync(int id);
+        Task InvalidateCacheAsync();
+        Task InvalidateCacheByIdAsync(int id);
     }
 }

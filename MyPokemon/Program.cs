@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using MyPokemon.Application;
+using MyPokemon.Application.Mappings;
 using MyPokemon.Domain.Interfaces;
 using MyPokemon.Infrastructure.DBContext;
 using MyPokemon.Infrastructure.Repositories;
@@ -12,10 +13,12 @@ var connectionString = builder.Configuration.GetConnectionString("DefaultConnect
 builder.Services.AddDbContext<MyPokemonContext>(options => options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString)));
 
 builder.Services.AddApplicationMediatR();
-
+builder.Services.AddMemoryCache();
+builder.Services.AddAutoMapper(typeof(MappingProfile).Assembly);
 builder.Services.AddControllers();
 
 builder.Services.AddTransient<IPokemonRepository, PokemonRepository>();
+builder.Services.AddTransient<IPTypeRepository, PTypeRepository>();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
