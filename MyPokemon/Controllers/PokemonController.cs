@@ -70,7 +70,7 @@ namespace MyPokemon.API.Controllers
         [HttpPut("Delete")]
         public async Task<ActionResult<ApiResponse<ItemResult<PokemonDto>>>> SoftDelete(int id)
         {
-            var command = new SoftDeletePokemonCommand { id = id };
+            var command = new DeletePokemonCommand { id = id };
             var result = await _mediator.Send(command);
 
             if (result.Success)

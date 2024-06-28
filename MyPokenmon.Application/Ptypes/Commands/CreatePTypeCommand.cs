@@ -1,17 +1,17 @@
 ﻿using MediatR;
 using MyPokemon.Application.Common;
 using MyPokemon.Application.Pokemons.DTOs;
-using MyPokemon.Domain.Entities;
+using MyPokemon.Application.Ptypes.DTOs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MyPokemon.Application.Pokemons.Commands
+namespace MyPokemon.Application.Ptypes.Commands
 {
-    public class SoftDeletePokemonCommand : IRequest<ApiResponse<ItemResult<Pokemon>>>
+    public class CreatePTypeCommand : IRequest<ApiResponse<ItemResult<PtypeDto>>>
     {
-        public int id { get; set; }
+        public string name { get; set; }
     }
 }

@@ -13,8 +13,8 @@ namespace MyPokemon.Application.Pokemons.Commands
     {
         public int id { get; set; }
         public string name { get; set; }
-        public float height_M { get; set; }
-        public float weight_Kg { get; set; }
+        public float heightM { get; set; }
+        public float weightKg { get; set; }
         public List<int> typeIds { get; set; }
     }
 }

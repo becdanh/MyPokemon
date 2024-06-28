@@ -10,6 +10,7 @@ namespace MyPokemon.Domain.Entities
     {
         public int Id { get; set; }
         public string? Name { get; set; } = "";
+        public string Slug { get; set; } = "";
         public ICollection<Pokemon_Type> PokemonTypes { get; set; }
         public bool IsDeleted { get; set; }
         public DateTime? CreatedAt { get; set; }

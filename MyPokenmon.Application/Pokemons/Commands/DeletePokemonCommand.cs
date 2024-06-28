@@ -10,11 +10,8 @@ using System.Threading.Tasks;
 
 namespace MyPokemon.Application.Pokemons.Commands
 {
-    public class CreatePokemonCommand : IRequest<ApiResponse<ItemResult<PokemonDto>>>
+    public class DeletePokemonCommand : IRequest<ApiResponse<ItemResult<Pokemon>>>
     {
-        public string name { get; set; }
-        public float heightM { get; set; }
-        public float weightKg { get; set; }
-        public List<int> typeIds { get; set; }
+        public int id { get; set; }
     }
 }

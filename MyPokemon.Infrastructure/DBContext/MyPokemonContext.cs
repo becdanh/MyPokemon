@@ -27,7 +27,7 @@ namespace MyPokemon.Infrastructure.DBContext
                     .WithMany(pc => pc.PokemonTypes)
                     .HasForeignKey(c => c.TypeId);
 
-            DataSeeder.SeedData(modelBuilder);
+/*            DataSeeder.SeedData(modelBuilder);*/
         }
 
         public DbSet<Pokemon> Pokemons { get; set; }
