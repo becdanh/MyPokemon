@@ -13,16 +13,16 @@ using System.Threading.Tasks;
 
 namespace MyPokemon.Application.Pokemons.Handlers
 {
-    public class SoftDeletePokemonCommandHandler : IRequestHandler<SoftDeletePokemonCommand, ApiResponse<ItemResult<Pokemon>>>
+    public class DeletePokemonCommandHandler : IRequestHandler<DeletePokemonCommand, ApiResponse<ItemResult<Pokemon>>>
     {
         private readonly IPokemonRepository _pokemonRepository;
 
-        public SoftDeletePokemonCommandHandler(IPokemonRepository pokemonRepository)
+        public DeletePokemonCommandHandler(IPokemonRepository pokemonRepository)
         {
             _pokemonRepository = pokemonRepository;
         }
 
-        public async Task<ApiResponse<ItemResult<Pokemon>>> Handle(SoftDeletePokemonCommand request, CancellationToken cancellationToken)
+        public async Task<ApiResponse<ItemResult<Pokemon>>> Handle(DeletePokemonCommand request, CancellationToken cancellationToken)
         {
             var pokemon = await _pokemonRepository.GetByIdAsync(request.id);
             if (pokemon == null || pokemon.IsDeleted)
